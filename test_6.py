@@ -96,7 +96,7 @@ image_sound_on_off = "on"
 
 # ***************************
 
-# Эта вся хуйня и 3 варианта попыток сверху для того чтобы скомпилировать звук внутрь запускаемого файла 
+# Эта вся ху... и 3 варианта попыток сверху для того чтобы скомпилировать звук и другие файлы не питона внутрь запускаемого ехе файла 
 # и вот наконец :
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
@@ -111,7 +111,6 @@ my_path_mp3_01 = resource_path('alarm_1.mp3')
 my_path_alarm_on_png = resource_path('alarm_on.png')
 my_path_alarm_off_png = resource_path('alarm_off.png')
 my_path_icon = resource_path('ocon_1.png')
-
 
 
 
