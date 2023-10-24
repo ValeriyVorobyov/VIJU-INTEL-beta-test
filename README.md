@@ -1,4 +1,4 @@
-# Welcome To [VIJU INTEL -beta](https://github.com/ValeriyVorobyov/VIJU-INTEL/releases/tag/v1.0.0-beta)
+# Welcome To [VIJU INTEL -beta](https://github.com/ValeriyVorobyov/VIJU-INTEL-beta-test/releases)
 ### Программа визуального анализа чата intel в игре [EVE Online](https://www.eveonline.com/) 
 ### Считывает текстовые файлы логов чатов из ваших документов "С:\. . .\Documents\EVE\logs\Chatlogs" и на основе информации в них, графически и с помощью звука оповещает вас о изменениях в них. 
 ### На данном этапе бета тестирования программа предназначена для узкого круга систем.
