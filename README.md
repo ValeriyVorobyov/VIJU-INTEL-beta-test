@@ -5,5 +5,5 @@
 ### VIJU INTEL написан на Python 3.8.8 с использованием tkinter
 
 
-![Screenshot](/../main/blob/v1.0.3/VIJU%20INTEL_1_0_3.png)
+![Screenshot](/../v1.0.3/VIJU%20INTEL_1_0_3.png)
 
