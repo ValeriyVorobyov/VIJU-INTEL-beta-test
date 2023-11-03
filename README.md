@@ -5,5 +5,9 @@
 ### VIJU INTEL написан на Python 3.8.8 с использованием tkinter
 
 
-![Screenshot](/../main/VIJU%20INTEL.png)
+<p align="center">
+ <img src="https://github.com/ValeriyVorobyov/VIJU-INTEL-beta-test/assets/98588779/f55b9b7f-001d-45c0-b32d-b6fa1421bbf4" />
+
+</p>
+
 
