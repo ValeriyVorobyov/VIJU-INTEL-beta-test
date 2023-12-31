@@ -10,4 +10,12 @@
 
 </p>
 
+# V2.0
+<p align="center">
+
+ <img src="https://raw.githubusercontent.com/ValeriyVorobyov/VIJU-INTEL-beta-test/v2.0.0/vijuintelv20.jpg" />
+
+</p>
+
+
 
