@@ -97,16 +97,7 @@ save_atr_btn_del = "SystemButtonText", 'TkDefaultFont', "SystemButtonFace", "gre
 # check = StringVar()
 # check.set("5")
 
-
-
-
-
-
-
-
-
 # ///////////////////////////
-
 
 # def resource_path(relative_path):
 #     """ Get absolute path to resource, works for dev and for PyInstaller """
@@ -117,9 +108,7 @@ save_atr_btn_del = "SystemButtonText", 'TkDefaultFont', "SystemButtonFace", "gre
 
 #     return os.path.join(base_path, relative_path)
 
-
 # ///////////////////////
-
 
 # def resource_path(relative):
 #     if hasattr(sys, "_MEIPASS"):
@@ -129,7 +118,6 @@ save_atr_btn_del = "SystemButtonText", 'TkDefaultFont', "SystemButtonFace", "gre
 # path = resource_path('image.png')
 # path = resource_path(os.path.join('Folder', 'image.png'))  #  Если в папке другой
 # img = test_6.image.load(path)
-
 
 # ********************
 
@@ -146,6 +134,8 @@ save_atr_btn_del = "SystemButtonText", 'TkDefaultFont', "SystemButtonFace", "gre
 
 # Эта вся ху... и 3 варианта попыток сверху для того чтобы скомпилировать звук и другие файлы не питона внутрь запускаемого ехе файла
 # и вот наконец :
+
+
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     if getattr(sys, 'frozen', False):
@@ -174,6 +164,8 @@ my_path_bd_setting = resource_path('bd_setting.db')
 my_path_bd_sound_one = resource_path('bd_sound_one.db')
 # my_path_test_6 = resource_path('test_6.py')
 
+
+bd_setting.create_bd_all(my_path_bd_setting, my_path_bd_sound_one)
 
 # now = datetime.now()
 
@@ -3581,7 +3573,7 @@ def sravnivaem_datatime_green(may_datatime, tag_system):
 
 # import modyfy_file
 
-bd_setting.create_bd_all(my_path_bd_setting, my_path_bd_sound_one)
+# bd_setting.create_bd_all(my_path_bd_setting, my_path_bd_sound_one)
 load_setting()
 
 # if bd_setting.check_base_setting("sound_netral") == 0:
