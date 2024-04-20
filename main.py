@@ -734,14 +734,15 @@ def zoom_out():
 def save_window_position():
 
     # root.geometry('1150x740+100+100')
+    w = root.winfo_width()
+    h = root.winfo_height()+20
     x = root.winfo_x()
     y = root.winfo_y()
     # w = 1150
     # h = 740
-    w = root.winfo_width()
-    h = root.winfo_height()
 
     geometry = ('%dx%d+%d+%d' % (w, h, x, y))
+    # print(" geometry =  " + geometry)
 
     # print("geometry = " + geometry)
     # print(str(type(geometry)))
@@ -756,12 +757,14 @@ def load_window_position():
 
     else:
         geometry = bd_setting.reed_base_setting(my_path_bd_setting, "window_position")
+        print(" geometry =  " + geometry)
         return geometry
 
 
 def window_default():
 
     root.geometry(geometry_default)
+    # root.grab_set()
 
 
 class Window(Tk):
@@ -787,6 +790,8 @@ root = Tk()
 root.title("VIJU INTEL")
 # root.geometry('1150x740+100+100')
 root.geometry(load_window_position())
+# root.geometry(geometry_default)
+# root.grab_set()
 icon = PhotoImage(file=my_path_icon)
 root.iconphoto(False, icon)
 
@@ -1104,10 +1109,22 @@ def alarm_sound(system_alarm):
     # print("********************   alarm_sound(): save_guard_slovar_sound = " + (str(save_guard_slovar_sound)))
     # guard_sound.proverka_sound_guard()
 
+    # ii = bd_setting.reed_base_sound_one_column(my_path_bd_sound_one)
+    # print("ii type : " + str(type(ii)))
+    # print("ii = " + str(ii[0][0]))
+
+    # если есть система где обнаружен нетрал в безе систем которые надо проверять, то ничего не делаем
+    # т.е. проигрываем звук
     if system_alarm in guard_sound_one.get_guard_set_system_sound_one():
         pass
     else:
-        return
+        # если база систем которые надо проверять, пуста, то ничего не делаем
+        # т.е. идёт звук на любую систему на карте
+        if int(bd_setting.reed_base_sound_one_column(my_path_bd_sound_one)[0][0]) == 0:
+            pass
+        else:
+        #     # если база систем которые надо проверять, НЕ пуста, то завершаем def метод
+            return
 
     if image_sound_on_off == "on":
 

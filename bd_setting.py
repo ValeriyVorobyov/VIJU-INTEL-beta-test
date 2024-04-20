@@ -222,6 +222,23 @@ def reed_base_sound_one(path_bd_sound_one) -> list:
     # return results1[0][2]
     return results1
 
+
+def reed_base_sound_one_column(path_bd_sound_one):
+    conn = sqlite3.connect(path_bd_sound_one)
+    cur = conn.cursor()
+    # cur.execute("SELECT text1, text2 FROM my_setting")
+    reed = cur.execute('SELECT text1 FROM my_sound_one')
+    results1 = reed.fetchall()
+    data = cur.fetchall()
+    sql = "SELECT COUNT (*) FROM my_sound_one"
+    cur.execute(sql)
+    results = cur.fetchall()
+    print("base_sound_one Всего строк:  " + str(results))
+    # reed = cur.fetchone()
+    # print("reed_base_my_sound_one = " + str(results1))
+    # return results1[0][2]
+    return results
+
 # create_base()
 
 # check_base_setting("fon_color")
