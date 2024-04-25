@@ -25,6 +25,7 @@ import guard_sound_one
 import string_1
 import guard_sound
 import bd_setting
+import string_ess
 # import pickle
 
 
@@ -1239,8 +1240,6 @@ def chouse_sound_10():
     bd_setting.save_update_to_base(my_path_bd_setting, "sound_netral", str(int_sound_chouse))
     # alarm_sound()
 
-
-
 # def chouse_sound_1():
 
 #       int_sound_chouse = int_int
@@ -1248,16 +1247,11 @@ def chouse_sound_10():
 #       if  int_int == 1:  alarm_sound(1)
 #       elif int_int == 2: alarm_sound(2)
 
-
 # playsound('alarm_1.mp3', winsound.SND_FILENAME | winsound.SND_ASYNC)
 # playsound('alarm_1.mp3')
 
 
-
-
-
 def clear_console():
-
    
    # os.system('clear')
    if os.name == 'nt':
@@ -1288,6 +1282,7 @@ def click_TEST_button():
     # obrabotka_timers_slovar()
 #'KJ-QWL', 'KMQ4-V', 'SVB-RE', '5-P1Y2', 'J52-BH',
 
+
 def click_TuKTuK_button():
     print("  ---  click_TuKTuK_button():   ---  ")
 
@@ -1295,7 +1290,7 @@ def click_TuKTuK_button():
 
     # find_system_alarm.add_alarm_timers(((datetime.now() + timedelta(hours=-3)).strftime('%Y, %m, %d, %H, %M')) , "TEST-2")
     global last_line_text
-    last_line_text = " J52-BH* ESS"
+    last_line_text = " 5-P1Y2* Mistress 5"
 
    # my_text.insert(CURRENT, "\n" + last_line_text)
     my_text.insert('0.0', "\n" + last_line_text)
@@ -3179,7 +3174,7 @@ def add_line():
 
         print("КОЛ СТРОК В ИНТЕЛЕ = " + str(kol_strok_v_my_text))  # returns line count
 
-        if kol_strok_v_my_text > 40:
+        if kol_strok_v_my_text > 30:
             my_text.delete(1.0, END)
             print("ОЧИСТКА ИНТЕЛА ЗАВЕРШЕНА")
 
@@ -3337,6 +3332,7 @@ def obrabotka__ess__timers_slovar():
                 btn_id = canva_1.itemcget(elements, "window")
                 bt_alarm = root.nametowidget(btn_id)
                 # btn_alarm.config(background="red")
+
                 if i >= 0 and i < 5:
                     ess_manager(system_tag, i)
                     # bt_alarm.config(background="red")
@@ -3402,19 +3398,33 @@ def proverka_na_sovpadenia():
     for elements in find_all_canvas:
         # print(elements)
         # list_system.append(canva_1.itemcget(elements, "tags"))
+        if canva_1.itemcget(elements, "tags")[0:6] in last_line_text:
+
+            if string_ess.ess_check(last_line_text) == 1:
+                # [07: 54:36] Dragon
+                # Smart > < url = showinfo:1377 // 2116038957 > Amaranth
+                # Amatin < / url > < url = showinfo:53451 // 9002034731002001777 > Needlejack            Trace < / url >
+
+                print("!!!!!!!!!!       Е С Т Ь  ЕЩЁ  *****  ESS *****        С О В П А Д Е Н И Е         !!!!!!!!!")
+                # ess_manager(canva_1.itemcget(elements, "tags")[0:6])
+                # добавляем систему и текущее время срабатывания в ESS словарь
+
+                find_system_alarm.add_ess_alarm_timers(((datetime.now() + timedelta(hours=-3)).strftime('%Y, %m, %d, %H, %M')),
+                                                       canva_1.itemcget(elements, "tags")[0:6])
 
         # if ("clr" and canva_1.itemcget(elements, "tags"))  in last_line_text:
-        if canva_1.itemcget(elements, "tags")[0:6] in last_line_text and (
-                "ess" in last_line_text or "ESS" in last_line_text or "Ess" in last_line_text):
-            # [07: 54:36] Dragon
-            # Smart > < url = showinfo:1377 // 2116038957 > Amaranth
-            # Amatin < / url > < url = showinfo:53451 // 9002034731002001777 > Needlejack            Trace < / url >
-
-            print("!!!!!!!!!!       Е С Т Ь  ЕЩЁ  *****  ESS *****        С О В П А Д Е Н И Е         !!!!!!!!!")
-            # ess_manager(canva_1.itemcget(elements, "tags")[0:6])
-            # добавляем систему и текущее время срабатывания в ESS словарь
-            find_system_alarm.add_ess_alarm_timers(((datetime.now() + timedelta(hours=-3)).strftime('%Y, %m, %d, %H, %M')),
-                                               canva_1.itemcget(elements, "tags")[0:6])
+        # if canva_1.itemcget(elements, "tags")[0:6] in last_line_text and (
+        #         "ess" in last_line_text or "ESS" in last_line_text or "Ess" in last_line_text):
+        #     # [07: 54:36] Dragon
+        #     # Smart > < url = showinfo:1377 // 2116038957 > Amaranth
+        #     # Amatin < / url > < url = showinfo:53451 // 9002034731002001777 > Needlejack            Trace < / url >
+        #
+        #     print("!!!!!!!!!!       Е С Т Ь  ЕЩЁ  *****  ESS *****        С О В П А Д Е Н И Е         !!!!!!!!!")
+        #     # ess_manager(canva_1.itemcget(elements, "tags")[0:6])
+        #     # добавляем систему и текущее время срабатывания в ESS словарь
+        #
+        #     find_system_alarm.add_ess_alarm_timers(((datetime.now() + timedelta(hours=-3)).strftime('%Y, %m, %d, %H, %M')),
+        #                                        canva_1.itemcget(elements, "tags")[0:6])
 
         if canva_1.itemcget(elements, "tags")[0:6] in last_line_text and (
                 "clr" in last_line_text or "сlr" in last_line_text or "CLR" in last_line_text or
@@ -3598,8 +3608,6 @@ load_setting()
 # else:
 #     int_sound_chouse = int(bd_setting.reed_base_setting("sound_netral"))
 
-
-
 time()
 
 # string_1.go()
@@ -3620,13 +3628,11 @@ print("num_posl_stroki_live_reed= " + str(gl_num_posl_stroki_live_reed))
 
 # modyfy_file.Watcher(path_live)
 
-
 print(type(gl_num_posl_stroki_live_reed))
 
 print(type(gl_num_posl_stroki_save))
 
 print(gl_num_posl_stroki_live_reed == gl_num_posl_stroki_save)
-
 
 # def proverka_num():
 
@@ -3640,18 +3646,14 @@ print(gl_num_posl_stroki_live_reed == gl_num_posl_stroki_save)
 
 #             # proverka_num()
 
-
 #         else:
 #             print ("ECТЬ Новая строка")
-
 
 #             gl_num_posl_stroki_save = string_1.kol_strok()
 
 #             add_line(last_line_text)
 
-
 # def tttt():
-
 
 #     def proverka_num():
 
@@ -3664,7 +3666,6 @@ print(gl_num_posl_stroki_live_reed == gl_num_posl_stroki_save)
 #             print ("НЕТ Новой строки")
 
 #             # proverka_num()
-
 
 #         else:
 #            print ("ECТЬ Новая строка")
@@ -3689,7 +3690,6 @@ print(gl_num_posl_stroki_live_reed == gl_num_posl_stroki_save)
 #       except:
 #             print('Unhandled error: %s' % sys.exc_info()[0])
 
-
 # proverka_num()
 # def executeSomething():
 #     print ("**** proverka_num() *****")
@@ -3698,7 +3698,6 @@ print(gl_num_posl_stroki_live_reed == gl_num_posl_stroki_save)
 
 # while True:
 #     executeSomething()
-
 
 # def opros_file_cikl():
 
@@ -3709,8 +3708,17 @@ print(gl_num_posl_stroki_live_reed == gl_num_posl_stroki_save)
 #     else:
 #           num_posl_stroki_live_reed = string_1.kol_strok().after(10, opros_file_cikl)
 
+# label_2.configure(width=0)
+# label_2.pack
+
+
 def finish():
+
     # string_1.string_exit()
+    # label_2.configure(width=0)
+    # label_2.config(width=1)
+    # print("label_2.winfo_x() = " + str(label_2.winfo_x()))
+
     save_window_position()
     root.destroy()  # ручное закрытие окна и всего приложения
     #
