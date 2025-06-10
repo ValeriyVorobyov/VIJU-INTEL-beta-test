@@ -232,7 +232,7 @@ def str_date(line_text):
     except ValueError:
 
         print(" !!!! вышло хреново !!!!         string_1.py ->  def str_date(line_text):")
-        # date_time_last = datetime.strptime("2000.07.27 0:0:0", "%Y.%m.%d %H:%M:%S")
+        date_time_last = datetime.strptime("2000.07.27 0:0:0", "%Y.%m.%d %H:%M:%S")
         # date_time_last = save_format_data_perebora_files
 
     # print("string_1.py -> def str_date(line_text): -> "  +  (str(date_time_last)  ))
